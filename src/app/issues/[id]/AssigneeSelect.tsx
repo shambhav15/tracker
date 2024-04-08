@@ -41,7 +41,7 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
           <Select.Trigger className="w-[180px]" placeholder="Assign..." />
           <Select.Content>
             <Select.Group>
-              <Select.Item>Unassigned</Select.Item>
+              {/* <Select.Item value="">Unassigned</Select.Item> */}
               {users?.map((u) => (
                 <Select.Item key={u.kindeId} value={u.kindeId}>
                   {u.name}
