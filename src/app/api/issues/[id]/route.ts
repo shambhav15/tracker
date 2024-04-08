@@ -7,11 +7,11 @@ export async function PATCH(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  // const { isAuthenticated } = await getKindeServerSession();
-  // const isLoggedIn = await isAuthenticated();
-  // if (!isLoggedIn) {
-  //   return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  // }
+  const { isAuthenticated } = await getKindeServerSession();
+  const isLoggedIn = await isAuthenticated();
+  if (!isLoggedIn) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
   const body = await request.json();
   const validation = PatchIssueSchema.safeParse(body);
